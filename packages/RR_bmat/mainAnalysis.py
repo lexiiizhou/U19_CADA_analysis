@@ -50,8 +50,8 @@ def preprocessing(filepath, eventcodedict):
                 restaurant = re.findall('R[1-4]+', events_list[offer_index][0])[0]
                 events_list[i].append(int(restaurant[1:]))
             if len(events_list[i]) <= 3:
-                restaurant = re.findall('R[1-4]+', events_list[i][0])[0]
-                events_list[i].append(int(restaurant[1:]))
+                restaurant = re.findall('[1-4]', events_list[i][0])[0]
+                events_list[i].append(int(restaurant))
 
     restaurant_extractor(events_list)
 
